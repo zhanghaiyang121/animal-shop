@@ -161,6 +161,8 @@ import tabbar from "../../components/tabbar"
 .orders{
     margin-bottom: 2rem;
     margin-top: 1px;
+    flex: 1;
+    overflow: auto;
     .order-item{
         background: rgb(255,255,255);
         padding: 0 0.5rem;

@@ -1,18 +1,22 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/view/login/login'
+import login from '@/view/login/login'
 import home from '@/view/home/home'
 import bag from '@/view/bag/bag'
 import mine from '@/view/mine/mine'
 import fenlei from '@/view/fenlei/fenlei'
+import shopdetail from '@/view/shopdetail/shopdetail'
+import order from '@/view/order/order'
+import service from '@/view/service/service'
+import foster from '@/view/service/common/foster'
 Vue.use(Router)
 
 export default new Router({
   routes: [
     {
       path: '/',
-      name: 'HelloWorld',
-      component: home
+      name: 'login',
+      component: login
     },
     {
       path: '/home',
@@ -33,6 +37,27 @@ export default new Router({
       path: '/mine',
       name: 'mine',
       component: mine
+    },
+    {
+      path:"/shopdetail",
+      name:"shopdetail",
+      component:shopdetail
+    },
+    {
+      path:"/order",
+      name:"order",
+      component:order
+    },
+    {
+      path:"/service",
+      name:"service",
+      component:service,
+      children:[
+        {
+          path:"/",
+          component:foster
+        }
+      ]
     }
   ]
 })

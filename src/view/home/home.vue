@@ -71,6 +71,8 @@ import tabbar from "../../components/tabbar"
 .home{
     height: 100%;
     position: relative;
+    display: flex;
+    flex-direction: column;
     .head{
         height: 4rem;
         background: rgb(250,147,117);
@@ -160,9 +162,10 @@ import tabbar from "../../components/tabbar"
         }
     }
     .content{
-        height: 14rem;
         overflow: auto;
         padding: 0.5rem;
+        flex: 1;
+        padding-bottom: 2.5rem;
         .item{
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
             border-radius: 0.5rem;

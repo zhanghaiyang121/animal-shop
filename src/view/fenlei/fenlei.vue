@@ -26,7 +26,7 @@
         </div>
         <div class="card-list">
             <div class="cards-box">
-                <div class="carditem" v-for="(item,index) in cards" :key="index">
+                <div class="carditem" v-for="(item,index) in cards" :key="index" @click="goshop(item)">
                     <img :src="item.img" alt="">
                     <div class="right">
                         <div class="shopname">{{item.name}}</div>
@@ -189,7 +189,12 @@ import tabbar from "../../components/tabbar"
                     }
                 ]
             }
-        }
+        },
+        methods: {
+            goshop(item){
+                this.$router.push("/shopdetail")
+            }
+        },
     }
 </script>
 
@@ -330,10 +335,13 @@ import tabbar from "../../components/tabbar"
                     flex: 1;
                     display: flex;
                     flex-direction: column;
-                    justify-content: space-between;
+                    .shopname{
+                        margin-bottom: 0.2rem;
+                    }
                     .pingjia{
                         display: flex;
                         align-items:baseline;
+                        margin-bottom: 0.2rem;
                         .star{
                             display: flex;
                             align-items: center;
@@ -357,6 +365,7 @@ import tabbar from "../../components/tabbar"
                     .position{
                         display: flex;
                         align-items: center;
+                        margin-bottom: 0.2rem;
                         img{
                             width: 0.5rem;
                         }

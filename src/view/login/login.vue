@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="login">
         <!-- 头部 -->
         <div class="head">
             <div class="mask"></div>
@@ -31,7 +31,7 @@
         </div>
         <!-- 提交按钮 -->
         <div class="btn-box">
-            <div class="button">登录</div>
+            <div class="button" @click="login">登录</div>
         </div>
         <!-- 底部图案 -->
         <img class="foot" src="../../assets/bg1.png" alt="">
@@ -52,12 +52,19 @@
                 }else{
                     this.currentindex=1
                 }
+            },
+            login(){
+                this.$router.push("/home")
             }   
         }
     }
 </script>
 
 <style lang="scss" scoped>
+.login{
+    background: rgb(255,255,255);
+    height: 100%;
+}
 .head{
     height: 8rem;
     overflow: hidden;
@@ -117,7 +124,7 @@
         box-shadow :2px 2px 10px rgba(72, 191, 238,0.2)
     }
 .tab-btn{
-    margin-top: 4rem;
+    margin-top: 3rem;
     margin-bottom: 1rem;
     display: flex;
     font-size: 0.6rem;
@@ -161,6 +168,7 @@
     border-bottom: 1px solid rgb(230,230,230);
     padding-bottom: 0.5rem;
     margin: 0.5rem 0;
+    align-items: center;
    .phone-icon,.code-icon{
        width: 0.75rem;
        padding: 0;
@@ -182,7 +190,6 @@
 .btn-box{
     display: flex;
     justify-content: center;
-    margin-top: 2rem;
     .button{
         width: 10rem;
         height: 1.8rem;
